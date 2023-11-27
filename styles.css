@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url('fonts/Satoshi-Regular.woff') format('woff'),
+        url('fonts/Satoshi-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Satoshi-Light';
+    src: url('fonts/Satoshi-Light.woff') format('woff'),
+        url('fonts/Satoshi-Light.woff2') format('woff2');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi-Regular';
+}
+
+:root{
+    --winning-blocks : #1d1d1d;
+}
+body {
+    background-color: #222;
+    color: orange;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    padding: 40px;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 50px;
+}
+#gameboard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    margin-top: 50px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    font-size: 90px;
+    border: 1px solid orange;
+    border-top: 1px solid #222;
+    border-left: 1px solid #222;
+}
+
+.box:nth-child(3n){
+    border-right: none;
+}
+
+.box:nth-child(6) ~ .box{
+    border-bottom: none;
+}
+
+button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: linear-gradient(250deg, orange, rgb(255, 94, 0));
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+    text-transform: uppercase;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.05) translateY(5px);
+}
